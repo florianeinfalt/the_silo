@@ -4,6 +4,8 @@ import sys
 import json
 import platform
 
+from .logger import logger
+
 TESTING = False
 try:
     TESTING = os.environ['NON_PRODUCTION_CONTEXT']
@@ -37,6 +39,7 @@ def build_silo():
 
     for gizmo_name, gizmo in sorted(silo_data['gizmos'],
                                     key=lambda x: x[0]):
+        logger.info('Adding gizmo: {0}'.format(gizmo_name))
         silo_menu.addCommand('Gizmos/{0}'.format(gizmo_name),
                              'from the_silo import wrapper;'
                              'wrapper.create_gizmo(\'{0}\')'.
@@ -44,6 +47,7 @@ def build_silo():
 
     for script_name, module, func in sorted(silo_data['scripts'],
                                             key=lambda x: x[0]):
+        logger.info('Adding script: {0}'.format(script_name))
         silo_menu.addCommand('Scripts/{0}'.format(script_name),
                              'from the_silo import wrapper;'
                              'wrapper.exec_script(\'{0}\', \'{1}\')'.
@@ -54,4 +58,6 @@ def build_silo():
     silo_menu.addCommand('Contribute', 'import webbrowser;webbrowser.open(\'https://github.com/florianeinfalt/the_silo\')')
 
 if not TESTING:
+    logger.info('Initialising The Silo...')
     build_silo()
+    logger.info('[DONE]')
