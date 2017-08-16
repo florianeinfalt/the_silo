@@ -1,6 +1,7 @@
 {
     "gizmos": [
-        ["Grade Layer", "grade_layer"]
+        ["Chromatic Abberations", "chromatic_abberations"],
+        ["Grade Layer", "grade_layer"],
     ],
     "scripts": [
         ["Reload all Read nodes", "reload", "all_reads"],
