@@ -65,5 +65,6 @@ def build_silo():
 
 if not TESTING:
     logger.info('Initialising The Silo...')
+    logger.info('Version: {0}'.format(__version__))
     build_silo()
     logger.info('[DONE]')
