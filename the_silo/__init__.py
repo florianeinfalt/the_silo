@@ -54,8 +54,14 @@ def build_silo():
                              format(module, func))
 
     silo_menu.addSeparator()
-    silo_menu.addCommand('Version', 'nuke.message("The Silo version {0}")'.format(__version__))
-    silo_menu.addCommand('Contribute', 'import webbrowser;webbrowser.open(\'https://github.com/florianeinfalt/the_silo\')')
+    silo_menu.addCommand(
+        'Version',
+        'nuke.message("The Silo version {0}")'.format(__version__))
+    silo_menu.addCommand(
+        'Contribute',
+        'import webbrowser;webbrowser.open('
+        '\'https://github.com/florianeinfalt/the_silo\')')
+
 
 if not TESTING:
     logger.info('Initialising The Silo...')
