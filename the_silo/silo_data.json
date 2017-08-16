@@ -2,7 +2,8 @@
     "gizmos": [
         ["Chromatic Abberations", "chromatic_abberations"],
         ["Grade Layer", "grade_layer"],
-        ["Refraction Diffusion", "refraction_diffusion"]
+        ["Refraction Diffusion", "refraction_diffusion"],
+        ["V-Ray Tonemapper", "vray_tonemapper"]
     ],
     "scripts": [
         ["Reload all Read nodes", "reload", "all_reads"],
