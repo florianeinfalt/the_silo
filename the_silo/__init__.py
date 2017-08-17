@@ -22,7 +22,7 @@ except:
         raise RuntimeError('Import the_silo from within Nuke')
     import nuke
 
-__version__ = '0.1.1'
+__version__ = '0.1.2'
 __all__ = []
 
 silo_name = 'The Silo'
