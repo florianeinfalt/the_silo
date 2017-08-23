@@ -1,0 +1,61 @@
+#! C:/Program Files/Nuke9.0v7/nuke-9.0.7.dll -nx
+version 9.0 v7
+Gizmo {
+ inputs 2
+ addUserKnob {20 settings l Settings}
+ addUserKnob {41 channels T Curves.channels}
+ addUserKnob {41 use_precomputed l "use precomputed table" T Curves.use_precomputed}
+ addUserKnob {41 range T Curves.range}
+ addUserKnob {41 lut l "" +STARTLINE T Curves.lut}
+ addUserKnob {41 source T Curves.source}
+ addUserKnob {41 target T Curves.target}
+ addUserKnob {41 setRGB l "Set RGB" T Curves.setRGB}
+ addUserKnob {41 setRGBA l "Set RGBA" -STARTLINE T Curves.setRGBA}
+ addUserKnob {41 setA l "Set A" -STARTLINE T Curves.setA}
+ addUserKnob {26 ""}
+ addUserKnob {41 maskChannelMask l mask -STARTLINE T Curves.maskChannelMask}
+ addUserKnob {41 inject -STARTLINE T Curves.inject}
+ addUserKnob {41 invert_mask l invert -STARTLINE T Curves.invert_mask}
+ addUserKnob {41 fringe -STARTLINE T Curves.fringe}
+ addUserKnob {41 unpremult l "(un)premult by" T Curves.unpremult}
+ addUserKnob {41 invert_unpremult l invert -STARTLINE T Curves.invert_unpremult}
+ addUserKnob {41 mix T Curves.mix}
+}
+ Input {
+  inputs 0
+  name Mask
+  xpos 180
+  ypos 134
+  number 1
+ }
+ Input {
+  inputs 0
+  name In
+  xpos -40
+  ypos -10
+ }
+ Colorspace {
+  colorspace_out sRGB
+  name Linear2sRGB
+  xpos -40
+  ypos 86
+ }
+ ColorLookup {
+  inputs 1+1
+  name Curves
+  xpos -40
+  ypos 134
+ }
+ Colorspace {
+  colorspace_in sRGB
+  name sRGB2Linear
+  xpos -40
+  ypos 182
+ }
+ Output {
+  name Out
+  selected true
+  xpos -40
+  ypos 278
+ }
+end_group

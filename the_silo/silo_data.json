@@ -2,6 +2,7 @@
     "gizmos": [
         ["Chromatic Abberations", "chromatic_abberations"],
         ["Grade Layer", "grade_layer"],
+        ["Photoshop Curves", "photoshop_curves"],
         ["Refraction Diffusion", "refraction_diffusion"],
         ["V-Ray Tonemapper", "vray_tonemapper"]
     ],
