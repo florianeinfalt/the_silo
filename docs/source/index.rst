@@ -8,7 +8,7 @@ Contents:
 
    installation
    getting_started
-   api_documentation
+   scripts
 
 
 

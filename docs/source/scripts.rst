@@ -1,5 +1,5 @@
-API Documentation
-=================
+Scripts
+=======
 
 .. automodule:: the_silo.scripts.multichannel
     :members:
