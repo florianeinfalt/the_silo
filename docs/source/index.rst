@@ -8,6 +8,7 @@ Contents:
 
    installation
    getting_started
+   gizmos
    scripts
 
 
