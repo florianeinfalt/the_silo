@@ -5,6 +5,11 @@ import math
 def shuffle(width=4096, height=4096):
     """
     For either selected read nodes in the compositing script, shuffle out all channels contained and create a write node for each channel.
+
+    :param width: Contact sheet width
+    :type width: int
+    :param height: Contact sheet height
+    :type height: int
     """
     exr_data = {
         'channels': 'rgb',
