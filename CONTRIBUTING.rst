@@ -33,7 +33,7 @@ Add scripts
 3. Register the new script in ``/the_silo/silo_data.json``
 
     Scripts are described in a list of lists under the key ``scripts``.
-    To extend the list of scripts, create a new list with the format [nice name, module_name, function_name]
+    To extend the list of scripts, create a new list with the format [nice name, module_name, function_name, shortcut]
 
 4. Test the changes work
 
