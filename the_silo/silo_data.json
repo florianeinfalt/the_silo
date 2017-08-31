@@ -7,6 +7,11 @@
         ["V-Ray Tonemapper", "vray_tonemapper"]
     ],
     "scripts": [
+        ["Nodes/Reload all Read nodes", "reload", "all_reads", "ctrl+shift+r"],
+        ["Nodes/Move Left", "nodes", "move_left", "ctrl+shift+left"],
+        ["Nodes/Move Right", "nodes", "move_right", "ctrl+shift+right"],
+        ["Nodes/Move Up", "nodes", "move_up", "ctrl+shift+up"],
+        ["Nodes/Move Down", "nodes", "move_down", "ctrl+shift+down"],
         ["Multichannel EXR - Shuffle", "multichannel", "shuffle", ""],
         ["Multichannel EXR - Create", "multichannel", "create", ""]
     ]
