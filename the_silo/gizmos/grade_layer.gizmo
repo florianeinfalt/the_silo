@@ -1,5 +1,5 @@
-#! /Applications/Nuke10.0v5/Nuke10.0v5.app/Contents/MacOS/libnuke-10.0.5.dylib -nx
-version 10.0 v5
+#! C:/Program Files/Nuke9.0v7/nuke-9.0.7.dll -nx
+version 9.0 v7
 Gizmo {
  inputs 2
  addUserKnob {20 grade_layer l "Grade Layer"}
@@ -12,18 +12,16 @@ Gizmo {
  addUserKnob {41 multiply T __GRADE__.multiply}
  addUserKnob {41 add l offset T __GRADE__.add}
  addUserKnob {41 gamma T __GRADE__.gamma}
- addUserKnob {26 "" l "  "}
  addUserKnob {41 reverse T __GRADE__.reverse}
  addUserKnob {41 black_clamp l "black clamp" -STARTLINE T __GRADE__.black_clamp}
  addUserKnob {41 white_clamp l "white clamp" -STARTLINE T __GRADE__.white_clamp}
- addUserKnob {26 "" l mask}
- addUserKnob {41 maskChannelMask l "" -STARTLINE T __GRADE__.maskChannelMask}
- addUserKnob {41 maskChannelInput l "" -STARTLINE T __GRADE__.maskChannelInput}
- addUserKnob {41 inject T __GRADE__.inject}
+ addUserKnob {41 maskChannelMask l mask T __GRADE__.maskChannelMask}
+ addUserKnob {41 inject -STARTLINE T __GRADE__.inject}
  addUserKnob {41 invert_mask l invert -STARTLINE T __GRADE__.invert_mask}
  addUserKnob {41 fringe -STARTLINE T __GRADE__.fringe}
  addUserKnob {41 unpremult l "(un)premult by" T __GRADE__.unpremult}
- addUserKnob {41 invert_unpremult l invert T __GRADE__.invert_unpremult}
+ addUserKnob {41 invert_unpremult l invert -STARTLINE T __GRADE__.invert_unpremult}
+ addUserKnob {41 mix T __GRADE__.mix}
 }
  Input {
   inputs 0
@@ -43,16 +41,15 @@ Gizmo {
   xpos -6
   ypos 90
  }
-set N32630aa0 [stack 0]
+set N2429800 [stack 0]
  Shuffle {
   in rgb
   alpha black
   name layer_select
-  selected true
   xpos 180
   ypos 87
  }
-set N326348d0 [stack 0]
+set N2429400 [stack 0]
  Grade {
   inputs 1+1
   maskChannelMask -rgba.alpha
@@ -60,8 +57,8 @@ set N326348d0 [stack 0]
   xpos 180
   ypos 302
  }
-push $N32630aa0
-push $N326348d0
+push $N2429800
+push $N2429400
  Merge2 {
   inputs 2
   operation minus
@@ -69,7 +66,7 @@ push $N326348d0
   xpos 70
   ypos 158
  }
-push $N32630aa0
+push $N2429800
  Copy {
   inputs 2
   from0 rgba.red
@@ -79,6 +76,7 @@ push $N32630aa0
   from2 rgba.blue
   to2 rgba.blue
   name replace_main_color
+  selected true
   xpos -40
   ypos 211
  }
