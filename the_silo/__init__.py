@@ -29,10 +29,13 @@ silo_name = 'The Silo'
 silo_location = os.path.dirname(os.path.abspath(__file__))
 
 
-def build_silo():
+def build_silo(toolbar=True):
     nuke.pluginAddPath('{0}/gizmos'.format(silo_location))
 
-    silo_menu = nuke.menu('Nuke').addMenu(silo_name)
+    if toolbar:
+        silo_menu = nuke.toolbar('Nodes').addMenu(silo_name)
+    else:
+        silo_menu = nuke.menu('Nuke').addMenu(silo_name)
 
     with open('{0}/silo_data.json'.format(silo_location), 'r') as fp:
         silo_data = json.load(fp)
