@@ -40,6 +40,10 @@ def build(toolbar=True):
     logger.info('Building The Silo UI...')
     logger.info('Version: {0}'.format(__version__))
 
+    if not nuke.GUI:
+        logger.critical('Nuke is not in GUI mode, aborting UI creation')
+        return
+
     if toolbar:
         silo_menu = nuke.toolbar('Nodes').addMenu(silo_name)
     else:
