@@ -55,6 +55,11 @@ def build_silo():
 
     silo_menu.addSeparator()
     silo_menu.addCommand(
+        'Documentation',
+        'import webbrowser;webbrowser.open('
+        '\'https://the-silo.readthedocs.io/en/latest/index.html\')')
+    silo_menu.addSeparator()
+    silo_menu.addCommand(
         'Version',
         'nuke.message("The Silo version {0}")'.format(__version__))
     silo_menu.addCommand(
