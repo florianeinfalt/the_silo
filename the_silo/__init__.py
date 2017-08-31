@@ -29,8 +29,16 @@ silo_name = 'The Silo'
 silo_location = os.path.dirname(os.path.abspath(__file__))
 
 
-def build_silo(toolbar=True):
+def init():
+    logger.info('Initialising The Silo...')
+    logger.info('Version: {0}'.format(__version__))
     nuke.pluginAddPath('{0}/gizmos'.format(silo_location))
+    logger.info('[DONE]')
+
+
+def build(toolbar=True):
+    logger.info('Building The Silo UI...')
+    logger.info('Version: {0}'.format(__version__))
 
     if toolbar:
         silo_menu = nuke.toolbar('Nodes').addMenu(silo_name)
@@ -71,9 +79,4 @@ def build_silo(toolbar=True):
         'import webbrowser;webbrowser.open('
         '\'https://github.com/florianeinfalt/the_silo\')')
 
-
-if not TESTING:
-    logger.info('Initialising The Silo...')
-    logger.info('Version: {0}'.format(__version__))
-    build_silo()
     logger.info('[DONE]')
