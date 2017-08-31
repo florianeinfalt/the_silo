@@ -45,13 +45,14 @@ def build_silo():
                              'wrapper.create_gizmo(\'{0}\')'.
                              format(gizmo))
 
-    for script_name, module, func in sorted(silo_data['scripts'],
-                                            key=lambda x: x[0]):
+    for script_name, module, func, keys in sorted(silo_data['scripts'],
+                                                  key=lambda x: x[0]):
         logger.info('Adding script: {0}'.format(script_name))
         silo_menu.addCommand('Scripts/{0}'.format(script_name),
                              'from the_silo import wrapper;'
                              'wrapper.exec_script(\'{0}\', \'{1}\')'.
-                             format(module, func))
+                             format(module, func),
+                             keys)
 
     silo_menu.addSeparator()
     silo_menu.addCommand(
